@@ -24,14 +24,14 @@ col3.metric("Highest Points", highest_points)
 
 # Leaderboard
 st.subheader("🏆 Top Ranked Competitors")
-st.dataframe(run_query(q.TOP_RANKED_COMPETITORS))
+st.dataframe(run_query(q.TOP_5_COMPETITORS))
 
 # Search
 st.subheader("🔍 Search Competitor")
 search = st.text_input("Enter competitor name:")
 if search:
     df_search = run_query("""
-    SELECT c.name, c.country, r.rank, r.points, r.movement, r.competitions_played
+    SELECT c.name, c.country, r.ranking, r.points, r.movement, r.competitions_played
     FROM Competitor_Rankings r
     JOIN Competitors c ON c.competitor_id = r.competitor_id
     WHERE c.name LIKE %s
@@ -41,3 +41,4 @@ if search:
 # Country analysis
 st.subheader("🌍 Country-Wise Analysis")
 st.dataframe(run_query(q.COUNTRY_ANALYSIS))
+
