@@ -54,14 +54,15 @@ def create_tables():
 
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS Competitor_Rankings (
-        rank_id INT AUTO_INCREMENT PRIMARY KEY,
-        rank INT NOT NULL,
-        movement INT NOT NULL,
-        points INT NOT NULL,
-        competitions_played INT NOT NULL,
-        competitor_id VARCHAR(50),
-        FOREIGN KEY (competitor_id) REFERENCES Competitors(competitor_id)
+    rank_id INT AUTO_INCREMENT PRIMARY KEY,
+    ranking INT NOT NULL,             -- changed from rank
+    movement INT NOT NULL,
+    points INT NOT NULL,
+    competitions_played INT NOT NULL,
+    competitor_id VARCHAR(50),
+    FOREIGN KEY (competitor_id) REFERENCES Competitors(competitor_id)
     )""")
+
 
     conn.commit()
     cursor.close()

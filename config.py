@@ -16,12 +16,13 @@ except Exception:
     # ✅ Fallback for local testing (XAMPP)
     API_KEY = os.getenv("API_KEY", "Cg5QnQ4hGxac0zOPBxyZkVzuVkoEHSuAmoQ0dLiU")
     DB_CONFIG = {
-        "host": "localhost",
-        "user": "root",
-        "password": "",
-        "database": "tennis_db",
-        "port": 3306
-    }
+    "host": "trolley.proxy.rlwy.net",
+    "user": "root",
+    "password": "dMLyDVXINrAMovvOXsDccLavyhiDmvPU",
+    "database": "railway",
+    "port": 28961
+}
+
 
 # ✅ Base URL
 BASE_URL = "https://api.sportradar.com/tennis/trial/v3/en"
